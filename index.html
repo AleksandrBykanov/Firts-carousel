@@ -1,30 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <title>First carousel</title>
-
 </head>
 
 <body>
+  <div class="carousel" id="carousel">
+    <div class="slides" id="slides-container">
+      <div class="slide active">Slide 1</div>
+      <div class="slide">Slide 2</div>
+      <div class="slide">Slide 3</div>
+      <div class="slide">Slide 4</div>
+      <div class="slide">Slide 5</div>
+    </div>
 
-  <ul id="slides" class="slides">
-    <li class="slide active">Slide 1</li>
-    <li class="slide">Slide 2</li>
-    <li class="slide">Slide 3</li>
-    <li class="slide">Slide 4</li>
-    <li class="slide">Slide 5</li>
-  </ul>
+    <div class="controls" id="controls-container">
+      <div class="control control-prev" id="btn-prev">
+        <i class="fas fa-angle-left"></i>
+      </div>
+      <div class="control control-pause" id="btn-pause">
+        <i class="fas fa-pause-circle"></i>
+      </div>
+      <div class="control control-next" id="btn-next">
+        <i class="fas fa-angle-right"></i>
+      </div>
+    </div>
 
-  <button class="controls" id="pause">Pause</button>
-  <button class="controls" id="previous">Previous</button>
-  <button class="controls" id="next">Next</button>
+    <div class="indicators" id="indicators-container">
+      <div class="indicator active" data-slide-to="0"></div>
+      <div class="indicator" data-slide-to="1"></div>
+      <div class="indicator" data-slide-to="2"></div>
+      <div class="indicator" data-slide-to="3"></div>
+      <div class="indicator" data-slide-to="4"></div>
+    </div>
+  </div>
 
-
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/carousel-swipe.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>
