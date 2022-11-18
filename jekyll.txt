@@ -1,0 +1,5 @@
+$ touch .nojekyll
+
+$ git add .
+
+$ git commit -m "Disable Jekull"
