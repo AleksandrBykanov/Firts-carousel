@@ -5,21 +5,57 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="libs/@fontawesome/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <title>First carousel</title>
 </head>
 
 <body>
-  <div class="carousel" id="mycarousel">
-    <div class="slides" id="slides-container">
-      <div class="slide item active">Slide 1</div>
-      <div class="slide item">Slide 2</div>
-      <div class="slide item">Slide 3</div>
-      <div class="slide item">Slide 4</div>
-      <div class="slide item">Slide 5</div>
+  <header class="header">
+    <div class="header-menu">
+      <div class="header-menu__container">
+        <div class="header-logo">
+          <a class="header_logo__link" href="#">
+            <img class="header-logo__img" src="assets/img/logo.png" alt="logo">
+          </a>
+        </div>
+
+        <div class="header-navbar">
+          <ul class="header_navbar__list">
+            <li class="header-navbar__item">
+              <a class="header-navbar__link" href="#">Cabin for a couple</a>
+            </li>
+
+            <li class="header-navbar__item">
+              <a class="header-navbar__link" href="#">Cabin for family</a>
+            </li>
+
+            <li class="header-navbar__item">
+              <a class="header-navbar__link" href="#">Luxury cabin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
+
+  <main>
+
+    <div class="carousel" id="mycarousel">
+      <div class="slides" id="slides-container">
+        <div class="slide item active">Slide 1</div>
+        <div class="slide item">Slide 2</div>
+        <div class="slide item">Slide 3</div>
+        <div class="slide item">Slide 4</div>
+        <div class="slide item">Slide 5</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+
+  </footer>
 
   <script src="assets/js/main.js" type="module"></script>
 
