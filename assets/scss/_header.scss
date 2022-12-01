@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  min-height: 200px;
+  min-height: 150px;
 }
 
 .header-menu {
@@ -12,6 +12,7 @@
 
   &__container {
     max-width: 1280px;
+    min-width: 525px;
     margin-right: auto;
     margin-left: auto;
     display: grid;
@@ -76,6 +77,10 @@
     font-size: 1.125rem;
     transition: color 0.5s;
 
+    &:hover {
+      color: aqua;
+      transition: 1s;
+    }
     @include md {
       padding: 10px 10px;
     }

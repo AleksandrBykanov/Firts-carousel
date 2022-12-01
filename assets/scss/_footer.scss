@@ -1,0 +1,31 @@
+.footer {
+  min-height: 100px;
+  padding: 20px 0;
+  margin-top: auto;
+  min-width: 525px;
+
+  &__contacts {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    & a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1.75rem;
+      padding: 10px;
+      transition: 0.5s;
+
+      &:hover,
+      &:focus {
+        color: aqua;
+      }
+    }
+  }
+}

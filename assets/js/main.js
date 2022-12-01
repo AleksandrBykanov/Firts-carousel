@@ -3,7 +3,7 @@ import SwipeCarousel from './carousel-swipe.js';
 const slider = new SwipeCarousel({
   containerID: '#mycarousel', 
   // slideID: '.item',
-  interval: 2000,
+  interval: 4000,
   isPlaying: false,
 });
 
