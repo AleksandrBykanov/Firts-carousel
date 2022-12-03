@@ -1,25 +1,24 @@
 class Carousel {
   constructor(p) {
-    const settings = {...{ containerID: '#carousel', slideID: '.slide', interval: 4000, isPlaying: true }, ...p};
+    const settings = {...{interval: 5000, containerID: '#carousel', slideID: '.slide', isPlaying: true }, ...p};
 
     this.container = document.querySelector(settings.containerID);
     this.slideItems = this.container.querySelectorAll(settings.slideID);
+    this.isPlaying = settings.isPlaying;
     this.interval = settings.interval;
-    this.isPlayng = settings.isPlaying;
-    
+    this.slidesContainer = document.querySelector('#slides');
   }
 
   _initProps() {
-    this.currentSlide = 0;
-    
     this.SLIDES_COUNT = this.slideItems.length;
     this.CODE_LEFT_ARROW = 'ArrowLeft';
     this.CODE_RIGHT_ARROW = 'ArrowRight';
     this.CODE_SPACE = 'Space';
-    this.FA_PAUSE = '<i class="fas fa-pause-circle"></i>';
-    this.FA_PLAY = '<i class="fas fa-play-circle"></i>';
+    this.FA_PAUSE = '<i class="far fa-pause-circle"></i>';
+    this.FA_PLAY = '<i class="far fa-play-circle"></i>';
     this.FA_PREV = '<i class="fas fa-angle-left"></i>';
     this.FA_NEXT = '<i class="fas fa-angle-right"></i>';
+    this.currentSlide = 0;
     }
   
   _initControls() {
@@ -27,12 +26,12 @@ class Carousel {
       
     const PREV = `<div class="control control-prev" id="btn-prev">${this.FA_PREV}</div>`;
     const PAUSE = `<div class="control control-pause" id="btn-pause">
-    ${this.isPlayng ? this.FA_PAUSE : this.FA_PLAY}</div>`;
+    ${this.isPlaying ? this.FA_PAUSE : this.FA_PLAY}</div>`;
     const NEXT = `<div class="control control-next" id="btn-next">${this.FA_NEXT}</div>`;
       
     controls.setAttribute('class', 'controls');
     controls.innerHTML = PREV + PAUSE + NEXT;
-    this.container.append(controls);
+    this.slidesContainer.append(controls);
   
     this.prevBtn = this.container.querySelector('#btn-prev');
     this.pauseBtn = this.container.querySelector('#btn-pause');
@@ -63,8 +62,8 @@ class Carousel {
     this.pauseBtn.addEventListener('click', this.pausePlay.bind(this));
     this.nextBtn.addEventListener('click', this.next.bind(this));
     this.indicatorsContainer.addEventListener('click', this._indicate.bind(this));
-    this.container.addEventListener('mouseenter', this.pause.bind(this));
-    this.container.addEventListener('mouseleave', this.play.bind(this));
+    // this.container.addEventListener('mouseenter', this.pause.bind(this));
+    // this.container.addEventListener('mouseleave', this.play.bind(this));
     document.addEventListener('keydown', this._pressKey.bind(this));
   }
   
@@ -105,23 +104,23 @@ class Carousel {
   }
 
   pause() {
-    if (this.isPlayng) {
+    if (this.isPlaying) {
       this.pauseBtn.innerHTML = this.FA_PLAY;
-      this.isPlayng = false;
+      this.isPlaying = false;
       clearInterval(this.timerID); 
     }
   }
     
   play() {
-    if (!this.isPlayng) {
+    if (!this.isPlaying) {
       this.pauseBtn.innerHTML = this.FA_PAUSE;
-      this.isPlayng = true;
+      this.isPlaying = true;
       this._tick();
     }
   }
     
   pausePlay() {
-    this.isPlayng ? this.pause() : this.play();
+    this.isPlaying ? this.pause() : this.play();
   }
     
   prev() {
@@ -139,7 +138,7 @@ class Carousel {
     this._initControls();
     this._initIndicators();
     this._initListeners();
-    this._tick(this.isPlayng);
+    this._tick(this.isPlaying);
   }
 };
 export default Carousel;
